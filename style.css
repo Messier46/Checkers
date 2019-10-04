@@ -154,12 +154,17 @@ div#board {
     height: 10vmin;
     position: absolute;
     background-color: #232621; }
+
+/*Top checker pieces*/
   div#board .player1pieces .piece {
     position: absolute;
     width: 8vmin;
     height: 8vmin;
-    background-color: #e4a6ae;
-    background-size: 65%;
+      
+      /*Piece center color*/
+    background-image: url(checkPcsImg/Checkersblue.png);
+    background-size: 145%;
+      
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 6vmin;
@@ -175,12 +180,15 @@ div#board {
     div#board .player1pieces .piece.selected {
       -webkit-box-shadow: 0 0 10px 5px #16A8C7;
       box-shadow: 0 0 10px 5px #16A8C7; }
+
+/*Bottom checker pieces*/
   div#board .player2pieces .piece {
     position: absolute;
     width: 8vmin;
     height: 8vmin;
-    background-color: transparent;
-      background-image: url(img/flowerTest.jpg);
+      
+    background-color: green;
+    
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;

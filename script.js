@@ -34,10 +34,12 @@ window.onload = function () {
       this.player = 1;
     else
       this.player = 2;
+      
     //makes object a king
     this.king = false;
     this.makeKing = function () {
-      this.element.css("backgroundImage", "url('img/king" + this.player + ".png')");
+      this.element.css("backgroundImage", "url('checkCrownImg/king.png')");
+        this.element.css("backgroundSize", "120%");
       this.king = true;
     }
     //moves the piece
