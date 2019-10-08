@@ -1,5 +1,8 @@
+
+
 window.onload = function () {
   //The initial setup
+    
   var gameBoard = [
     [0, 1, 0, 1, 0, 1, 0, 1],
     [1, 0, 1, 0, 1, 0, 1, 0],
@@ -38,7 +41,8 @@ window.onload = function () {
     //makes object a king
     this.king = false;
     this.makeKing = function () {
-      this.element.css("backgroundImage", "url('checkCrownImg/king.png')");
+        
+      this.getElementsByClassName("king").css("backgroundImage", "url('checkCrownImg/king.png'");
         this.element.css("backgroundSize", "120%");
       this.king = true;
     }

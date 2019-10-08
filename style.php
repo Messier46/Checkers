@@ -1,3 +1,17 @@
+<?php
+    header("Content-type: text/css;");
+    session_start();
+    
+    
+    //$pick1 = $_SESSION['userPic1'];
+    //$pick2 = $_SESSION['userPic2'];
+    
+    
+    
+    
+    
+?>
+
 html, body {
   position: absolute;
   top: 0;
@@ -9,7 +23,9 @@ html, body {
   color: #333333;
   font-family: "Lato", Calibri, sans-serif;
   font-size: 16px;
-  background-color: #3A3042; }
+  background-image: url(blue_wave_menu_background.jpg); 
+    background-size: 2000px 1000px;
+}
   html h1, body h1 {
     margin-top: 10px; }
   html h2, body h2 {
@@ -162,8 +178,8 @@ div#board {
     height: 8vmin;
       
       /*Piece center color*/
-    background-image: url(checkPcsImg/Checkersblue.png);
-    background-size: 145%;
+    background-image: <?=$pick1?>;
+    background-size: 125%;
       
     background-repeat: no-repeat;
     background-position: center;
@@ -187,7 +203,8 @@ div#board {
     width: 8vmin;
     height: 8vmin;
       
-    background-color: green;
+    background-image: <?=$pick2?>;
+    background-size: 125%;
     
     background-size: 90%;
     background-repeat: no-repeat;

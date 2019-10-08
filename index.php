@@ -1,10 +1,24 @@
+
 <!doctype html>
+
 <html>
 <head>
+    <?php
+    
+    session_start();
+    $_SESSION['userPic1'] = 'url(checkPcsImg/Stop_Sign_Trans.png)';
+    $_SESSION['userPic2'] = 'url(checkPcsImg/Go_Sign.png)';
+    $pick1 = $_SESSION['userPic1'];
+    $pick2 = $_SESSION['userPic2'];    
+    
+?>
+    
   <title>HTML5 Checkers</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+    
+  <link rel="stylesheet" type='text/css' href="style.php"  media="screen">
+    
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -15,8 +29,10 @@
   <div class="column">
     <div class="info">
       <h1>Checkers</h1>
+        <!--Temporary settings button-->
+        <button><a href="settings.php">Settings</a></button>
       <hr>
-      <p>Made by codethejason for <a href="http://fossasia.org">FOSSASIA</a> 2015.</p>
+      
     </div>
     <div class="stats">
       <h2>Game Statistics</h2>
@@ -31,7 +47,7 @@
       <div class="clearfix"></div>
       <div class="turn"></div>
       <span id="winner"></span>
-      <button id="cleargame">Reset Game</button>
+      
     </div>
   </div>
   <div class="column">
