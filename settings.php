@@ -25,22 +25,26 @@
             <div class="col-lg-6">
                 <h1>Select your board color</h1>
                 <img src="checkBoardImg/blackngray.jpg">
-                
                 <img src="checkBoardImg/blacknteal.jpg">
                 <img src="checkBoardImg/blacknwhite.jpg">
-                <img src="checkBoardImg/bluencyan.jpg"
+                <img src="checkBoardImg/bluencyan.jpg">
+                <img src="checkBoardImg/bluenblack.jpg">
+                <img src="checkBoardImg/bluencyan.jpg">
+                <img src="checkBoardImg/bluengreen.jpg">
+                <img src="checkBoardImg/bluenyellow.jpg">
               </div>
-            </div>
+            
         
             <div class="col-lg-6">
                 <h1>Select your piece color</h1>
-                <img onclick="<?$pick1 = 'checkPcsImg/Checkersblue.png'?>" src="checkPcsImg/Checkersblue.png">
+                <img onclick="<?$pick1 = 'checkPcsImg/yellowplain.png'?>" src="checkPcsImg/yellowplain.png">
                 <img src="checkPcsImg/Go_Sign.png">
                 <img src="checkPcsImg/Stop_Sign_Trans.png">
-                <img src="checkPcsImg/Checkersblack.png">
+                <img src="checkPcsImg/redsun.png">
                 </div>
-          <!--Temporary settings button-->
-        <button><a href="index.php">Settings</a></button>
+              </div>
+          <!--Temporary settings button
+        <button><a href="index.php">Settings</a></button>-->
       </div>
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
   </body>

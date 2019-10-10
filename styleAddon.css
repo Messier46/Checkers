@@ -1,6 +1,6 @@
 html, body{
     background-image: url(blue_wave_menu_background.jpg); 
-    background-size: 2000px 1000px;
+    background-size: cover;
 }
 .container{
     background-color: white;

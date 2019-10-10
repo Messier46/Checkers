@@ -3,8 +3,8 @@
     session_start();
     
     
-    //$pick1 = $_SESSION['userPic1'];
-    //$pick2 = $_SESSION['userPic2'];
+    $pick1 = $_SESSION['userPic1'];
+    $pick2 = $_SESSION['userPic2'];
     
     
     
@@ -61,8 +61,8 @@ div.column {
     overflow: hidden;
     height: auto; } }
 div.info, div.stats {
-  width: 70%;
-  margin: 13vmin auto 0;
+  width: 40%;
+  margin: 9vmin auto 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 20px 30px;
@@ -73,7 +73,8 @@ div.info, div.stats {
   box-shadow: 1px 1px 3px #232621; }
 
 div.stats {
-  margin: 50px auto !important; }
+  margin-left: 410px !important;
+}
   div.stats .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -178,7 +179,7 @@ div#board {
     height: 8vmin;
       
       /*Piece center color*/
-    background-image: <?=$pick1?>;
+    background-image: url(checkPcsImg/redsun.png);
     background-size: 125%;
       
     background-repeat: no-repeat;
@@ -203,8 +204,8 @@ div#board {
     width: 8vmin;
     height: 8vmin;
       
-    background-image: <?=$pick2?>;
-    background-size: 125%;
+    background-image: url(checkPcsImg/Go_Sign.png);
+    background-size: 135%;
     
     background-size: 90%;
     background-repeat: no-repeat;

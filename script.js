@@ -42,7 +42,7 @@ window.onload = function () {
     this.king = false;
     this.makeKing = function () {
         
-      this.getElementsByClassName("king").css("backgroundImage", "url('checkCrownImg/king.png'");
+      this.element.css("backgroundImage", "url('checkCrownImg/king.png'");
         this.element.css("backgroundSize", "120%");
       this.king = true;
     }

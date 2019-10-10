@@ -17,6 +17,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     
+    
   <link rel="stylesheet" type='text/css' href="style.php"  media="screen">
     
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -27,13 +28,13 @@
 </head>
 <body>
   <div class="column">
-    <div class="info">
+    <!--<div class="info">
       <h1>Checkers</h1>
-        <!--Temporary settings button-->
+        Temporary settings button
         <button><a href="settings.php">Settings</a></button>
       <hr>
       
-    </div>
+    </div>-->
     <div class="stats">
       <h2>Game Statistics</h2>
       <div class="wrapper">
