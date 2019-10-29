@@ -1,0 +1,44 @@
+#menulogo{
+    padding-left: 350px;
+}
+body{
+    background-image: url(img/blue_wave_menu_background.jpg);
+    background-repeat: no-repeat;
+    background-size: 2000px 1000px;
+}
+.buttons{
+    background-color: black;
+}
+h1{
+    text-align: center;
+}
+a {
+    margin-top: 1px;
+    padding: 25px;
+    text-align: center;
+    display: block;
+    color: blue !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    border: 2px solid black;
+    
+    /*Changes the fonts for the front menu*/
+    font-family: cursive;
+    font-size: 15px;
+}
+a:hover {
+    background-color: rgb(242, 237, 216);
+    color: black;
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+    background-color: black;
+    text-decoration: none;
+}
+#play, #settings, #quit, #leaderboard{
+    float: left;
+    width: 20%;
+}
+

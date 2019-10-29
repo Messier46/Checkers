@@ -1,69 +1,110 @@
-
-<!doctype html>
-
-<html>
-<head>
-    <?php
-    
+<?php
     session_start();
-    $_SESSION['userPic1'] = 'url(checkPcsImg/Stop_Sign_Trans.png)';
-    $_SESSION['userPic2'] = 'url(checkPcsImg/Go_Sign.png)';
-    $pick1 = $_SESSION['userPic1'];
-    $pick2 = $_SESSION['userPic2'];    
+
+
+
+    $_SESSION['accountId'] = 1;
+
+    $error = "";
+    require_once("connect-db.php");
+    $sql = "select * from setting";
+    $statement1 = $db->prepare($sql); 
+    if($statement1->execute()) {
+//        an array is created, called $orders
+        $accounts = $statement1->fetchAll();
+        if($accounts == null) {
+            $error = "No accounts found";
+        }
+        $statement1->closeCursor();
+    }
+    else {
+        $error = "Error finding orders.";
+    }
     
+    foreach($accounts as $account){
+        if($account["accountId"] == $_SESSION['accountId']){
+            $_SESSION['userPic1'] = $account['pieceColor'];
+            $_SESSION['userBoardC1'] = $account['boardColor1'];
+            $_SESSION['userBoardC2'] = $account['boardColor2'];
+        }
+    }
+
+
+
 ?>
-    
-  <title>HTML5 Checkers</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-    
-    
-  <link rel="stylesheet" type='text/css' href="style.php"  media="screen">
-    
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.png" type="image/x-icon">
-  <script src="script.js"></script>
+<script>
+    //makes object a king
+    this.king = false;
+    this.makeKing = function () {
+        
+      this.element.css("backgroundImage", "url('checkCrownImg/king.png'");
+        this.element.css("backgroundSize", "120%");
+      this.king = true;
+    }
+</script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkers</title>
+    <link rel="stylesheet" href="menu-stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-  <div class="column">
-    <!--<div class="info">
-      <h1>Checkers</h1>
-        Temporary settings button
-        <button><a href="settings.php">Settings</a></button>
-      <hr>
-      
-    </div>-->
-    <div class="stats">
-      <h2>Game Statistics</h2>
-      <div class="wrapper">
-      <div id="player1">
-        <h3>Player 1 (Top)</h3>
-      </div>
-      <div id="player2">
-        <h3>Player 2 (Bottom)</h3>
-      </div>
-      </div>
-      <div class="clearfix"></div>
-      <div class="turn"></div>
-      <span id="winner"></span>
-      
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img id="menulogo" src="menuImg/checker_menu_logo.png">
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <img id="play" src="menuImg/play.png">
+                    <a href="checkers.php">Play Checkers</a>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <img id="settings" src="menuImg/settings.png">
+                    <a href="settings.php">Settings</a>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <img id="leaderboard" src="menuImg/leaderboard.png">
+                    <a href="leaderboard.php">Leaderboard</a>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <img id="quit" src="menuImg/quit.png">
+                    <a href="javascript:window.close();">Close</a>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="column">
-    <div id="board">
-      <div class="tiles"></div>
-      <div class="pieces">
-        <div class="player1pieces">
-            <div class="king">
-            </div>
-        </div>
-        <div class="player2pieces">
-            <div class="king">
-            </div>
-        </div>
-      </div>
-  </div>
 </body>
+
 </html>

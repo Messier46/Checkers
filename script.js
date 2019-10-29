@@ -38,6 +38,9 @@ window.onload = function () {
     else
       this.player = 2;
       
+      
+      
+      
     //makes object a king
     this.king = false;
     this.makeKing = function () {
@@ -46,6 +49,10 @@ window.onload = function () {
         this.element.css("backgroundSize", "120%");
       this.king = true;
     }
+    
+    
+    
+    
     //moves the piece
     //This is the part that the refresh the screen on the other computer
     this.move = function (tile) {
@@ -64,6 +71,9 @@ window.onload = function () {
       //change the css using board's dictionary
       this.element.css('top', Board.dictionary[this.position[0]]);
       this.element.css('left', Board.dictionary[this.position[1]]);
+        
+        
+        
       //if piece reaches the end of the row on opposite side crown it a king (can move all directions)
       if (!this.king && (this.position[0] == 0 || this.position[0] == 7))
         this.makeKing();
@@ -224,10 +234,10 @@ window.onload = function () {
     changePlayerTurn: function () {
       if (this.playerTurn == 1) {
         this.playerTurn = 2;
-        $('.turn').css("background", "linear-gradient(to right, transparent 50%, #BEEE62 50%)");
+        $('.turn').css("background", "linear-gradient(to right, transparent 50%, orange 50%)");
       } else {
         this.playerTurn = 1;
-        $('.turn').css("background", "linear-gradient(to right, #BEEE62 50%, transparent 50%)");
+        $('.turn').css("background", "linear-gradient(to right, orange 50%, transparent 50%)");
       }
       this.check_if_jump_exist()
       return;

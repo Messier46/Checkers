@@ -6,11 +6,23 @@ html, body{
     background-color: white;
 }
 h1{
+    /*Changes the "*/
     font-family: "Lato", Calibri, sans-serif;
 }
-img{
+img, .boardImg{
     width: 205px;
     border: 2px solid black;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+.pcsColor .brColor{
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.return{
+    text-align: center;
+    padding: 25px;
+    background-color: black;
+    color: blue;
+    border: 2px solid white;
 }

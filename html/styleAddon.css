@@ -1,0 +1,18 @@
+html, body{
+    background-image: url(blue_wave_menu_background.jpg); 
+    background-size: cover;
+}
+.container{
+    background-color: white;
+}
+h1{
+    /*Changes the ""*/
+    font-family: "Lato", Calibri, sans-serif;
+    font-size: 45px;
+}
+img{
+    width: 205px;
+    border: 2px solid black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

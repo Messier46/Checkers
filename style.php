@@ -2,14 +2,6 @@
     header("Content-type: text/css;");
     session_start();
     
-    
-    $pick1 = $_SESSION['userPic1'];
-    $pick2 = $_SESSION['userPic2'];
-    
-    
-    
-    
-    
 ?>
 
 html, body {
@@ -21,21 +13,44 @@ html, body {
   margin: 0;
   padding: 0;
   color: #333333;
-  font-family: "Lato", Calibri, sans-serif;
+    
+    
+    
+  /*Example: font-family: "Lato", Calibri, sans-serif;*/
+    /*Font to for Checker page*/
+    font-family: monospace;
   font-size: 16px;
+    
+    
+    
+    
+    
   background-image: url(blue_wave_menu_background.jpg); 
-    background-size: 2000px 1000px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
   html h1, body h1 {
     margin-top: 10px; }
+
+
+/*Changes the "Game Statistics"*/
   html h2, body h2 {
     font-size: 1.3em; }
+/*Changes the Player1 and Player 2 text*/
   html h3, body h3 {
     font-size: 1.1em; }
+.statTxt{
+    font-size: .8em;
+    
+}
+
+
+
   html a, body a {
     text-decoration: none;
     color: #333333;
-    font-weight: 700; }
+    font-weight: 700; 
+}
     html a:hover, body a:hover {
       text-decoration: underline; }
   html hr, body hr {
@@ -55,7 +70,15 @@ div.column {
   min-height: 100%;
   width: 50%; }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1069px) {
+    
+    
+    .boards{
+        background-image: url(blue_wave_menu_background-flipped.jpg);
+        background-size: cover;
+    }
+    
+    
   div.column {
     width: 100% !important;
     overflow: hidden;
@@ -71,10 +94,11 @@ div.info, div.stats {
   border-radius: 3px;
   -webkit-box-shadow: 1px 1px 3px #232621;
   box-shadow: 1px 1px 3px #232621; }
-
+/*
 div.stats {
   margin-left: 410px !important;
 }
+*/
   div.stats .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -84,7 +108,9 @@ div.stats {
     display: inline-block;
     width: 50%;
     float: left;
-    background-color: #B93848;
+      
+    background-color: <?=$_SESSION['userBoardC1']?>;
+      
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 15px 20px;
@@ -93,7 +119,7 @@ div.stats {
     div.stats #player1 .capturedPiece {
       width: 2.4vmin;
       height: 2.4vmin;
-      background-color: #232621;
+      background-color: <?=$_SESSION['userBoardC2']?>;
       background-size: 65%;
       background-repeat: no-repeat;
       background-position: center;
@@ -109,16 +135,18 @@ div.stats {
     display: inline-block;
     width: 50%;
     float: left;
-    background-color: #232621;
+      
+    background-color: <?=$_SESSION['userBoardC2']?>;
+      
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 15px 20px;
     border-top-right-radius: 3px;
-    color: #B93848; }
+    color: white; }
     div.stats #player2 .capturedPiece {
       width: 2.4vmin;
       height: 2.4vmin;
-      background-color: #B93848;
+      background-color: <?=$_SESSION['userBoardC1']?>;
       background-size: 65%;
       background-repeat: no-repeat;
       background-position: center;
@@ -133,28 +161,15 @@ div.stats {
     height: 10px;
     width: 100%;
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #BEEE62), color-stop(50%, transparent));
-    background: linear-gradient(to right, #BEEE62 50%, transparent 50%);
+    background: linear-gradient(to right, orange 50%, transparent 50%);
     border-radius: 0 0 3px 3px; }
   div.stats span#winner {
     display: block;
     padding: 10px 0 0;
     text-align: center; }
-  div.stats button#cleargame {
-    display: block;
-    border: 0;
-    color: #F1F1FF;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 20px auto 10px;
-    padding: 10px;
-    background-color: #16A8C7;
-    -webkit-box-shadow: 1px 1px 3px #232621;
-    box-shadow: 1px 1px 3px #232621;
-    -webkit-transition: background-color 0.15s linear;
-    transition: background-color 0.15s linear; }
-    div.stats button#cleargame:hover {
-      background-color: #0c5a6b; }
+  
 
+/*Affects the board colors*/
 div#board {
   position: absolute;
   top: calc(50% - 40vmin);
@@ -164,13 +179,13 @@ div#board {
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 3px #232621;
   box-shadow: 1px 1px 3px #232621;
-  background-color: #B93848;
+  background-color: <?=$_SESSION['userBoardC1']?>;
   overflow: hidden; }
   div#board .tile {
     width: 10vmin;
     height: 10vmin;
     position: absolute;
-    background-color: #232621; }
+    background-color: <?=$_SESSION['userBoardC2']?>; }
 
 /*Top checker pieces*/
   div#board .player1pieces .piece {
@@ -179,8 +194,8 @@ div#board {
     height: 8vmin;
       
       /*Piece center color*/
-    background-image: url(checkPcsImg/redsun.png);
-    background-size: 125%;
+    background-image: url(<?=$_SESSION['userPic1'] . ".png"?>);
+    background-size: 105%;
       
     background-repeat: no-repeat;
     background-position: center;
@@ -196,7 +211,7 @@ div#board {
     border: 1vmin solid #B93848; }
     div#board .player1pieces .piece.selected {
       -webkit-box-shadow: 0 0 10px 5px #16A8C7;
-      box-shadow: 0 0 10px 5px #16A8C7; }
+      box-shadow: 0 0 10px 5px white; }
 
 /*Bottom checker pieces*/
   div#board .player2pieces .piece {
@@ -204,10 +219,11 @@ div#board {
     width: 8vmin;
     height: 8vmin;
       
-    background-image: url(checkPcsImg/Go_Sign.png);
-    background-size: 135%;
+    background-image: url(<?=$_SESSION['userPic2'] . ".png"?>);
+    /*background-color: blue;*/
+    background-size: 105%;
     
-    background-size: 90%;
+    
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 6vmin;
@@ -222,4 +238,4 @@ div#board {
     border: 1vmin solid #8b8bff; }
     div#board .player2pieces .piece.selected {
       -webkit-box-shadow: 0 0 10px 5px #16A8C7;
-      box-shadow: 0 0 10px 5px #16A8C7; }
+      box-shadow: 0 0 10px 5px white; }

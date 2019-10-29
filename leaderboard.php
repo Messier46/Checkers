@@ -1,4 +1,5 @@
 <?php
+/*
 $servername = "localhost";
 $username = "what7aba_wc";
 $password = "My Password";
@@ -13,7 +14,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT name, number FROM WC";
 $result = $conn->query($sql);
-
+*/
 ?>
   <h1>Leaderboard</h1>
   <h2>Table was last updated ---</h2>
