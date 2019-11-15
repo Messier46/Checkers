@@ -7,7 +7,7 @@
 
     $error = "";
     require_once("connect-db.php");
-    $sql = "select * from setting";
+    $sql = "select * from setting INNER JOIN account on account.accountId  = setting.accountId";
     $statement1 = $db->prepare($sql); 
     if($statement1->execute()) {
 //        an array is created, called $orders
@@ -23,6 +23,7 @@
     
     foreach($accounts as $account){
         if($account["accountId"] == $_SESSION['accountId']){
+            $_SESSION['userName'] = $account['username'];
             $_SESSION['userPic1'] = $account['pieceColor'];
             $_SESSION['userBoardC1'] = $account['boardColor1'];
             $_SESSION['userBoardC2'] = $account['boardColor2'];
@@ -32,16 +33,7 @@
 
 
 ?>
-<script>
-    //makes object a king
-    this.king = false;
-    this.makeKing = function () {
-        
-      this.element.css("backgroundImage", "url('checkCrownImg/king.png'");
-        this.element.css("backgroundSize", "120%");
-      this.king = true;
-    }
-</script>
+
 
 <!DOCTYPE html>
 <html>

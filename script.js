@@ -16,6 +16,7 @@ window.onload = function () {
   //arrays to store the instances
   var pieces = [];
   var tiles = [];
+    
 
   //distance formula
   var dist = function (x1, y1, x2, y2) {
@@ -44,8 +45,11 @@ window.onload = function () {
     //makes object a king
     this.king = false;
     this.makeKing = function () {
-        
-      this.element.css("backgroundImage", "url('checkCrownImg/king.png'");
+        var convertKing = this.element.css("backgroundImage");
+        var convertCon = convertKing.substring(convertKing.indexOf('checkPcsImg/')+12, convertKing.indexOf('.png'));
+        //console.log(convertCon);
+        var kingImg = "url('checkCrownImg/" + convertCon + "King.png')";
+      this.element.css("backgroundImage", kingImg);
         this.element.css("backgroundSize", "120%");
       this.king = true;
     }
@@ -71,11 +75,12 @@ window.onload = function () {
       //change the css using board's dictionary
       this.element.css('top', Board.dictionary[this.position[0]]);
       this.element.css('left', Board.dictionary[this.position[1]]);
-        
+        //console.log(this.element.css("backgroundImage"));
         
         
       //if piece reaches the end of the row on opposite side crown it a king (can move all directions)
       if (!this.king && (this.position[0] == 0 || this.position[0] == 7))
+          
         this.makeKing();
       return true;
     };

@@ -6,23 +6,45 @@ html, body{
     background-color: white;
 }
 h1{
-    /*Changes the "*/
+    /*Changes the font"*/
     font-family: "Lato", Calibri, sans-serif;
 }
-img, .boardImg{
+.brColor img{
     width: 205px;
     border: 2px solid black;
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.pcsColor .brColor{
+button{
     margin-bottom: 10px;
     margin-right: 10px;
 }
+.pcsColor img{
+    width: 105px;
+    border: 2px solid black;
+}
 .return{
     text-align: center;
-    padding: 25px;
+        
     background-color: black;
     color: blue;
     border: 2px solid white;
+}
+
+a {
+    margin: 0 200px;
+	padding: 25px;
+	text-align: center;
+	display: block;
+	color: blue !important;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	border: 2px solid black;
+	font-size: 22px;
+	font-family: "Times New Roman", serif;
+}
+a:hover {
+	background-color: #f2edd8;
+	color: black;
+	text-decoration: none;
 }

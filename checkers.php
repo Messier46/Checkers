@@ -17,14 +17,14 @@
     else {
         $error = "Error finding orders.";
     }
-    
+    /*
     foreach($accounts as $account){
         if($account["accountId"] == $_SESSION['accountIdP2']){
             $_SESSION['userPic2'] = $account['pieceColor'];
             
         }
     }
-
+*/
 ?>
 <!DOCTYPE html>
 
@@ -50,14 +50,14 @@
     
   <div class="column">
     
-      <button><a href="settings.php">Button</a></button>
+      <!--<button><a href="settings.php">Button</a></button>-->
       
       <!--Display player stats-->
     <div class="stats">
       <h2>Game Statistics</h2>
       <div class="wrapper">
       <div id="player1">
-        <h3>Player 1 <span class="statTxt">(Top)</span></h3>
+        <h3><?php echo $_SESSION['userName'] ?><span class="statTxt2">(Top)</span></h3>
       </div>
       <div id="player2">
         <h3>Player 2 <span class="statTxt">(Bottom)</span></h3>

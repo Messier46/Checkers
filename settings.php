@@ -2,7 +2,7 @@
     session_start();
     $user = $_SESSION['accountId'];
 
-    $error = "";
+    $error = $variable = "";
     require_once("connect-db.php");
     $sql = "select * from setting WHERE accountId = $user";
     $statement1 = $db->prepare($sql); 
@@ -75,7 +75,7 @@
         $_SESSION['userBoardC2'] = $submittingBoard2;
     }
 
-    echo $_SESSION['userPic1'];
+    //echo $_SESSION['userPic1'];
 ?>
 <!DOCTYPE html>
 
@@ -93,6 +93,13 @@
   </head>
   <body>
       <div class="container">
+          <div class="row">
+            <div class="col-lg-12 return">
+                <a class="" href="index.php">Return</a>
+              
+              </div>
+          
+          </div>
           <div class="row">
             <div class="col-lg-6">
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
@@ -126,80 +133,32 @@
             
             
             <div class="col-lg-6">
-                <!--Temporary settings button-->
-        <button><a href="checkers.php">check</a></button>
+                <!--Temporary settings button
+        <button><a href="checkers.php">check</a></button>-->
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
                     <h1>Select your piece color</h1>
                     <fieldset class="pieceColor">
-                        <!--
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/Go_Sign"><img src="checkPcsImg/Go_Sign.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/Stop_Sign_Trans"><img src="checkPcsImg/Stop_Sign_Trans.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/redsun2"><img src="checkPcsImg/redsun2.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/8Ball"><img src="checkPcsImg/8Ball.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/SimonSays"><img src="checkPcsImg/SimonSays.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/Spiral"><img src="checkPcsImg/Spiral.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/1"><img src="checkPcsImg/1.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/2"><img src="checkPcsImg/2.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/3"><img src="checkPcsImg/3.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/4"><img src="checkPcsImg/4.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/5"><img src="checkPcsImg/5.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/6"><img src="checkPcsImg/6.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/7"><img src="checkPcsImg/7.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/8"><img src="checkPcsImg/8.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/9"><img src="checkPcsImg/9.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/10"><img src="checkPcsImg/10.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/11"><img src="checkPcsImg/11.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/12"><img src="checkPcsImg/12.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/13"><img src="checkPcsImg/13.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/20"><img src="checkPcsImg/20.png"></button>
-                        
-                        <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/21"><img src="checkPcsImg/21.png"></button>
--->
                         <?php
                         
-foreach (new DirectoryIterator('checkPcsImg') as $file) {
-    if($file->isDot()) continue;
-    $variable = $file->getFilename();
-    $variable = substr($variable, 0, strpos($variable, "."));
+                            foreach (new DirectoryIterator('checkPcsImg') as $file) {   
+                                if($file->isDot()) continue;
+                                $variable = $file->getFilename();
+                                $variable = substr($variable, 0, strpos($variable, "."));
+                                
     
     
-    ?>
-    <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/<?php echo($variable)?>"><img src="checkPcsImg/<?php echo($file->getFilename())  ?>"></button>
+                        ?>
+                            <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/<?php echo($variable)?>"><img src="checkPcsImg/<?php echo($file->getFilename())  ?>"></button>
                         <?php
-    /*print $file->getFilename() . '<br>';*/
-}
+/*print $file->getFilename() . '<br>';*/
+                            }
                         ?>
                         
                     </fieldset>
                 </div>
               
               </div>
-          <div class="row">
-            <div class="col-lg-12 return">
-                <a class="" href="index.php">Return</a>
-              
-              </div>
           
-          </div>
           
       </div>
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>

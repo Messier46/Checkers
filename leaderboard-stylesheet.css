@@ -1,0 +1,76 @@
+html {
+	cursor: default;
+}
+
+.container h1 {
+	font-size: 50px;
+	font-family: "Times New Roman", serif;
+}
+
+body {
+	background-image: url(blue_wave_menu_background.jpg);
+	background-repeat: no-repeat;
+	background-size: 2000px 1000px;
+}
+
+.buttons {
+	background-color: black;
+}
+
+table {
+	border: 3px solid black;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+th,
+td,
+tr {
+	text-align: center;
+}
+
+th {
+	font-size: 30px;
+	text-decoration: underline;
+	background-color: #7390bd;
+}
+
+td {
+	font-family: "Times New Roman", serif;
+	font-size: 25px;
+}
+
+tr:hover td:nth-child(odd) {
+	background-color: #ffff99;
+}
+
+tr:hover td:nth-child(even) {
+	background-color: #ffff99;
+}
+#rank{
+	font: bold;
+}
+#crown{
+	height: 35px;
+	width: 50px;
+	
+
+}
+#backButton {
+	margin: 5px;
+	padding: 5px;
+	text-decoration: none;
+	border: 2px solid black;
+	font-size: 20px;
+}
+
+tr:nth-child(odd) td {
+	background-color: #ffffff;
+}
+
+tr:nth-child(even) td {
+	background-color: #99bbff;
+}

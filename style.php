@@ -39,9 +39,12 @@ html, body {
 /*Changes the Player1 and Player 2 text*/
   html h3, body h3 {
     font-size: 1.1em; }
-.statTxt{
+.statTxt, .statTxt2{
+    float: left;
     font-size: .8em;
-    
+}
+.statTxt2{
+    padding-left: 15px;
 }
 
 
@@ -70,7 +73,7 @@ div.column {
   min-height: 100%;
   width: 50%; }
 
-@media screen and (max-width: 1069px) {
+@media screen and (max-width: 1206px) {
     
     
     .boards{
@@ -137,7 +140,7 @@ div.stats {
     float: left;
       
     background-color: <?=$_SESSION['userBoardC2']?>;
-      
+        
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 15px 20px;

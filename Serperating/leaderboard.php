@@ -54,7 +54,7 @@
 						<td id="rank">
 							<?php
 					if($rank == 1){ ?>
-							<img id="crown" src="crown.png" class="img-fluid">
+							<img id="crown" src="img/crown.png" class="img-fluid">
 							
 							<?php } ?>
 					<?php
