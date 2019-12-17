@@ -39,16 +39,9 @@ html, body {
 /*Changes the Player1 and Player 2 text*/
   html h3, body h3 {
     font-size: 1.1em; }
-.statTxt, .statTxt2{
-    float: left;
+.statTxt, .statTxt2{   
     font-size: .8em;
 }
-.statTxt2{
-    padding-left: 15px;
-}
-
-
-
   html a, body a {
     text-decoration: none;
     color: #333333;
@@ -72,6 +65,11 @@ div.column {
   height: 100%;
   min-height: 100%;
   width: 50%; }
+
+  .boardNames {
+    font-size: 55px;
+    text-align: center;
+  }
 
 @media screen and (max-width: 1206px) {
     
@@ -161,7 +159,7 @@ div.stats {
       transition: all 0.2s linear;
       margin: 5px; }
   div.stats div.turn {
-    height: 10px;
+    height: 55px;
     width: 100%;
     background: -webkit-gradient(linear, left top, right top, color-stop(50%, #BEEE62), color-stop(50%, transparent));
     background: linear-gradient(to right, orange 50%, transparent 50%);

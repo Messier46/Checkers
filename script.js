@@ -16,7 +16,12 @@ window.onload = function () {
   //arrays to store the instances
   var pieces = [];
   var tiles = [];
-    
+    var lp1Name = PL1;
+    var lp2Name = PL2;
+    /*
+    console.log(PL1);
+    console.log(PL2);
+    */
 
   //distance formula
   var dist = function (x1, y1, x2, y2) {
@@ -150,13 +155,22 @@ window.onload = function () {
       Board.board[this.position[0]][this.position[1]] = 0;
       //reset position so it doesn't get picked up by the for loop in the canOpponentJump method
       this.position = [];
+        
+        
+        //Displays the winning player below the Game Statistics
       var playerWon = Board.checkifAnybodyWon();
       if (playerWon) {
         $('#winner').html("Player " + playerWon + " has won!");
+          setTimeout(closeWindow(), 15000);
+          //closeWindow();
+          
       }
     }
   }
-
+function closeWindow(){
+            var win = window.open("http://localhost/IntegratedCheckers/changedCheckers/iwcCheckers/", "_self");
+            win.close();
+        }
   function Tile(element, position) {
     //linked DOM element
     this.element = element;
@@ -240,21 +254,28 @@ window.onload = function () {
       if (this.playerTurn == 1) {
         this.playerTurn = 2;
         $('.turn').css("background", "linear-gradient(to right, transparent 50%, orange 50%)");
+        $('.turn').css("height", "55px");
       } else {
         this.playerTurn = 1;
         $('.turn').css("background", "linear-gradient(to right, orange 50%, transparent 50%)");
+        $('.turn').css("height", "55px");
       }
       this.check_if_jump_exist()
       return;
     },
+      
+      
+      
     checkifAnybodyWon: function () {
       if (this.score.player1 == 12) {
-        return 1;
+        return lp1Name;
       } else if (this.score.player2 == 12) {
-        return 2;
+        return lp2Name;
       }
       return false;
     },
+      
+      
     //reset the game
     clear: function () {
       location.reload();
@@ -320,7 +341,7 @@ window.onload = function () {
         let exist = "jump exist for other pieces, that piece is not allowed to move"
         let continuous = "continuous jump exist, you have to jump the same piece"
         let message = !Board.continuousjump ? exist : continuous
-        console.log(message)
+        alert(message);
       }
     }
   });
@@ -368,3 +389,4 @@ window.onload = function () {
     }
   });
 }
+

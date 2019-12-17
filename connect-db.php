@@ -13,3 +13,4 @@ try {
             echo $error;
             exit();
         }
+?>

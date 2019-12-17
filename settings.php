@@ -102,6 +102,7 @@
           </div>
           <div class="row">
             <div class="col-lg-6">
+                
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
                 <h1>Select your board color</h1>
                     <fieldset class="boardColor">
@@ -135,6 +136,8 @@
             <div class="col-lg-6">
                 <!--Temporary settings button
         <button><a href="checkers.php">check</a></button>-->
+                <h1>Current piece color</h1>
+                <img src="<?php echo $_SESSION['userPic1'] ?>.png">
                 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
                     <h1>Select your piece color</h1>
                     <fieldset class="pieceColor">
@@ -142,8 +145,10 @@
                         
                             foreach (new DirectoryIterator('checkPcsImg') as $file) {   
                                 if($file->isDot()) continue;
-                                $variable = $file->getFilename();
-                                $variable = substr($variable, 0, strpos($variable, "."));
+                                if($file != "bot.png"){
+                                    
+                                    $variable = $file->getFilename();
+                                    $variable = substr($variable, 0, strpos($variable, "."));
                                 
     
     
@@ -151,6 +156,7 @@
                             <button type="submit" class="pcsColor" name="checkPcs" value="checkPcsImg/<?php echo($variable)?>"><img src="checkPcsImg/<?php echo($file->getFilename())  ?>"></button>
                         <?php
 /*print $file->getFilename() . '<br>';*/
+                                }
                             }
                         ?>
                         
